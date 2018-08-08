@@ -1,0 +1,15 @@
+library(graphics)
+States = rownames(USArrests)
+
+x<-States[grepl("w", States, fixed = T, ignore.case = F)]
+
+
+y <- States[grepl("W", States, fixed = T, ignore.case =F)]
+
+
+a <- nchar(States, type = "chars", allowNA = F, keepNA = NA)
+
+
+#jpeg("state_name_length.jpg", width=1200,height=700)
+hist(a,xlab="Number of character",ylab = "State frequency", main="Frequency of character in USA state name")
+#dev.off()
